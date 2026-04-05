@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ─── BACKGROUNDS ─────────────────────────────── */
+    --bg-base:          #0A0A0A;
+    --bg-surface:       #111111;
+    --bg-elevated:      #1A1A1A;
+    --bg-overlay:       #242424;
+    --bg-invert:        #F0F0F0;
+
+    /* ─── TEXT ─────────────────────────────────────── */
+    --text-primary:     #F0F0F0;
+    --text-secondary:   #AAAAAA;
+    --text-muted:       #666666;
+    --text-disabled:    #333333;
+    --text-invert:      #0A0A0A;
+    --text-code:        #00FF94;
+    --text-link:        #4D9FFF;
+    --text-link-hover:  #7FBAFF;
+
+    /* ─── ACCENT — PRIMARY (Mint Green) ────────────── */
+    --accent-mint:      #00FF94;
+    --accent-mint-dim:  #00CC77;
+    --accent-mint-pale: rgba(0,255,148,0.12);
+    --accent-mint-glow: rgba(0,255,148,0.25);
+    --accent-mint-text: #00E882;
+
+    /* ─── ACCENT — SECONDARY ────────────────────────── */
+    --accent-blue:      #4D9FFF;
+    --accent-blue-dim:  #3A88EE;
+    --accent-blue-pale: rgba(77,159,255,0.1);
+    --accent-blue-glow: rgba(77,159,255,0.21);
+
+    /* ─── ACCENT — TERTIARY ─────────────────────────── */
+    --accent-red:       #FF4D4D;
+    --accent-orange:    #FF8C42;
+    --accent-purple:    #BF5FFF;
+
+    /* ─── DOMAIN COLORS ─────────────────────────────── */
+    --domain-ai:        #FF8C42;
+    --domain-web:       #4D9FFF;
+    --domain-android:   #00FF94;
+    --domain-uiux:      #BF5FFF;
+
+    /* ─── BORDERS ───────────────────────────────────── */
+    --border-subtle:    #1E1E1E;
+    --border-default:   #2A2A2A;
+    --border-emphasis:  #404040;
+    --border-mint:      rgba(0,255,148,0.2);
+    --border-focus:     #00FF94;
+
+    /* ─── SHADOWS ───────────────────────────────────── */
+    --shadow-sm:        0 1px 3px rgba(0,0,0,0.5);
+    --shadow-md:        0 4px 16px rgba(0,0,0,0.6);
+    --shadow-lg:        0 8px 32px rgba(0,0,0,0.7);
+    --shadow-mint-sm:   0 0 12px rgba(0,255,148,0.2);
+    --shadow-mint-md:   0 0 24px rgba(0,255,148,0.25);
+    --shadow-mint-lg:   0 0 48px rgba(0,255,148,0.15);
+
+    /* ─── SPACING SCALE ─────────────────────────────── */
+    --space-1:   4px;
+    --space-2:   8px;
+    --space-3:   12px;
+    --space-4:   16px;
+    --space-5:   20px;
+    --space-6:   24px;
+    --space-8:   32px;
+    --space-10:  40px;
+    --space-12:  48px;
+    --space-16:  64px;
+    --space-20:  80px;
+    --space-24:  96px;
+    --space-32:  128px;
+
+    /* ─── RADIUS ─────────────────────────────────────── */
+    --radius-none:  0px;
+    --radius-sm:    2px;
+    --radius-md:    6px;
+    --radius-lg:    10px;
+    --radius-xl:    16px;
+    --radius-full:  9999px;
+
+    /* ─── TRANSITIONS ───────────────────────────────── */
+    --ease-default:   cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-in:        cubic-bezier(0.4, 0, 1, 1);
+    --ease-out:       cubic-bezier(0, 0, 0.2, 1);
+    --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-fast:  120ms;
+    --duration-base:  200ms;
+    --duration-slow:  350ms;
+    --duration-lazy:  500ms;
+
+    /* ─── Z-INDEX SCALE ─────────────────────────────── */
+    --z-below:    -1;
+    --z-base:      0;
+    --z-raised:   10;
+    --z-dropdown: 100;
+    --z-sticky:   200;
+    --z-overlay:  300;
+    --z-modal:    400;
+    --z-toast:    500;
+    --z-cursor:   9999;
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────── */
+    /* Tighter, more professional scale */
+    --text-display-2xl: clamp(36px, 4.5vw, 72px);
+    --text-display-xl:  clamp(28px, 3.5vw, 54px);
+    --text-display-lg:  clamp(24px, 3vw, 42px);
+    --text-display-md:  clamp(20px, 2.2vw, 32px);
+    --text-h1:          clamp(22px, 2.8vw, 36px);
+    --text-h2:          clamp(18px, 2vw, 28px);
+    --text-h3:          clamp(16px, 1.5vw, 22px);
+    --text-h4:          clamp(14px, 1.2vw, 17px);
+    --text-body-xl:     17px;
+    --text-body-lg:     15px;
+    --text-body-md:     14px;
+    --text-body-sm:     13px;
+    --text-body-xs:     11px;
+    --text-mono-lg:     14px;
+    --text-mono-md:     13px;
+    --text-mono-sm:     12px;
+    --text-mono-xs:     10px;
+    --leading-tight:    1.1;
+    --leading-snug:     1.2;
+    --leading-normal:   1.5;
+    --leading-relaxed:  1.65;
+    --leading-mono:     1.4;
+    --tracking-tight:   -0.025em;
+    --tracking-normal:   0em;
+    --tracking-wide:     0.04em;
+    --tracking-wider:    0.08em;
+    --tracking-widest:   0.15em;
+  }
+
+  /* ── All text uses Inter via --font-sans ─────────── */
+  :root {
+    --font-display: var(--font-sans);
+    --font-heading: var(--font-sans);
+    --font-body:    var(--font-sans);
+    --font-label:   var(--font-sans);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: none;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    body { cursor: auto; }
+  }
+
+  /* Focus ring — accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleX-in {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ─── BACKGROUND TEXTURE ─────────────────────────── */
+  .texture-dot-grid {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .texture-line-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .texture-scanline {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(0,0,0,0.06) 2px,
+      rgba(0,0,0,0.06) 3px
+    );
+  }
+
+  /* ─── CONSISTENT SECTION LAYOUT ─────────────────── */
+  .section-container {
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .section-container {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+  }
+
+  /* ─── SECTION LABEL ─────────────────────────────── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-mint-text);
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent-mint);
+    flex-shrink: 0;
+  }
+
+  /* ─── BREADCRUMB ─────────────────────────────────── */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  /* ─── PAGE HERO ──────────────────────────────────── */
+  .page-hero {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  /* ─── SCROLLBAR ──────────────────────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-base); }
+  ::-webkit-scrollbar-thumb { background: var(--border-emphasis); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent-mint-dim); }
+
+  /* ─── FORM INPUTS ────────────────────────────────── */
+  .form-input {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: 11px 14px;
+    font-size: 14px;
+    color: var(--text-primary);
+    width: 100%;
+    outline: none;
+    transition: border-color 120ms, box-shadow 120ms;
+    font-family: inherit;
+    appearance: none;
+  }
+  .form-input::placeholder { color: var(--text-disabled); }
+  .form-input:focus {
+    border-color: var(--accent-mint);
+    box-shadow: 0 0 0 3px var(--accent-mint-pale);
+  }
+  .form-input option { background: var(--bg-elevated); }
+}
